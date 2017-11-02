@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/css.css" />
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<title>响应式轮播图</title>
+		<style>
+			.on{background-position: 0px -21px;}
+		</style>
+	</head>
+	<body>
+		<div class="cq_banner">
+			<!-- 左右箭头-->
+			<div class="arrow">
+				<a href="#" class="prev"></a>
+				<a href="#" class="next"></a>
+			</div>
+			<!-- 小圆点-->
+			<div class="vi">
+				<div class="flicking">
+				<a href="#" class="on"></a>
+				<a href="#" class="btn"></a>
+				<a href="#" class="btn"></a>
+				<a href="#" class="btn"></a>
+				<a href="#" class="btn"></a>
+				</div>
+			</div>
+			<!-- 轮播图片-->
+			<ul class="imgBox">
+				<li style="background: url(img/img_main_1.jpg) no-repeat center;"></li>
+				<li style="background: url(img/img_main_2.jpg) no-repeat center;"></li>
+				<li style="background: url(img/img_main_3.jpg) no-repeat center;"></li>
+				<li style="background: url(img/img_main_4.jpg) no-repeat center;"></li>
+				<li style="background: url(img/img_main_5.jpg) no-repeat center;"></li>
+			</ul>
+		</div>
+		<script>
+			$(function(){
+				//箭头出现和消失
+				$(".cq_banner").hover(function(){
+					$(".next,.prev").stop().fadeIn(300);
+				},function(){
+					$(".next,.prev").stop().fadeOut(300);
+				},100)
+				
+				$(".imgBox li").eq(0).show().siblings().hide();
+				var page = 0;
+				
+				//右箭头点击控制轮播
+				$(".next").click(function(){
+					page++;
+					if(page == 5){
+						page = 0;
+					}
+					$(".flicking a").eq(page).addClass("on").siblings().removeClass("on");
+					$(".imgBox li").eq(page).fadeIn(400).siblings().fadeOut(400);
+				})
+				
+				//左箭头点击控制轮播
+				$(".prev").click(function(){
+					page--;
+					if(page == -1){
+						page = 4;
+					}
+					$(".imgBox li").eq(page).fadeIn(400).siblings().fadeOut(400);
+					$(".flicking a").eq(page).addClass("on").siblings().removeClass("on");	
+				})
+				
+				//设置自动轮播
+				auto = setInterval(function(){
+					$(".next").trigger("click");
+					
+				},4000);
+				
+				//小圆点控制图片
+				$(".flicking a").mouseover(function(){
+					clearInterval(auto);
+					var index = $(this).index();
+					page = index;
+					$(".imgBox li").eq(index).fadeIn(400).siblings().fadeOut(400);
+					$(".flicking a").eq(index).addClass("on").siblings().removeClass("on");
+				}).mouseout(function(){
+					
+					auto = setInterval(function(){
+						$(".next").trigger("click");
+					},4000);
+				})
+				
+				//鼠标移入定时器关闭，鼠标移出定时器继续
+				$(".imgBox li,.prev,.next").mouseover(function(){
+					clearInterval(auto);
+				}).mouseout(function(){
+					auto = setInterval(function(){
+						$(".next").trigger("click");
+					},4000);
+				})
+				
+
+			})
+		</script>
+	</body>
+</html>

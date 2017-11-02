@@ -1,0 +1,24 @@
+body{margin: 0; padding: 0;}
+@charset "utf-8";
+/* CSS Public */
+body, img, ul, li, input, a, form{ margin:0; padding:0; text-decoration:none; list-style-type:none; }
+a{ color:#333; outline:none; star:expression(this.onFocus=this.blur()); }
+a:hover{ color:#066eb7; }
+a img{ border:0; }
+body{ font-family:"微软雅黑"; font-size:14px; color:#333; background:#bfbfbf; }
+
+
+/*lunbo css */
+.cq_banner{width: 100%;height: 500px;margin: 0 auto;position: relative;overflow: hidden;}
+.prev{text-align: left; width: 100%; position: absolute;z-index: 99999;display: block;background: url(../img/hover_left.png) no-repeat center;height: 73px;top: 38%;left: -40%;}
+.next{width: 100%; position: absolute;z-index: 99999;display: block;background: url(../img/hover_right.png) no-repeat center;height: 73px;top: 38%;left: 40%;}
+.prev.next{color: #fff;font-size: 80px;cursor: pointer;}
+.imgBox{width: 100%;overflow: hidden;height: 500px;position: absolute;}
+.imgBox li{float: left; width: 100%;height: 500px;overflow: hidden;position: absolute;left: 0px;top:0px;text-align: center;display: block;}
+.imgBox li img{position: absolute;top: 0;left: 0;}
+.flicking{left: 50%;top: 85%; height: 50px;position: absolute;z-index: 99999;}
+.flicking a{float: left; width: 100%; background: url(../img/btn_main_img.png) no-repeat center;height:21px;width: 21px;display: block;background-position: 0px 0px;}
+div .flicking a.on {
+	background-position: 0px -21px;
+}
+/*end*/
