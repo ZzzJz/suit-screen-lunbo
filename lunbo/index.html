@@ -38,6 +38,7 @@
 		<script>
 			$(function(){
 				//箭头出现和消失
+				$(".next,.prev").stop().fadeOut(300);
 				$(".cq_banner").hover(function(){
 					$(".next,.prev").stop().fadeIn(300);
 				},function(){

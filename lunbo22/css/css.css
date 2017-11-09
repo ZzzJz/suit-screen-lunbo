@@ -1,0 +1,15 @@
+body,ul,li,div{margin: 0;padding: 0;font-family: "微软雅黑";}
+
+/*lunbo*/
+.lunbo2{height: 422px;position: relative;}
+.img{height: 422px;width: 20000px;overflow: hidden;position: absolute;}
+.img ul{width: 1920px;height: 422px;width: 20000px;}
+.img ul li{float: left; width:1920px;height: 422px;z-index: 0;}
+.dian{left: 50%;top: 90%; height: 50px;position: absolute;z-index: 99999;}
+.dian ul li{ cursor: pointer; float: left; background: url(../img/btn_main_img.png) no-repeat center;height:21px;width: 21px;display: block;background-position: 0px 0px;}
+.left_btn{background: url(../img/hover_left.png)no-repeat center;position: absolute;left: 1%;top: 200px;width: 73px;height: 74px;cursor: pointer;z-index: 9999;}
+.right_btn{background: url(../img/hover_right.png)no-repeat center;position: absolute;left: 95%;top: 200px;width: 73px;height: 74px;cursor: pointer;z-index: 9999;}
+.next{background: url(../img/hover_right.png) no-repeat center;}
+div .dian ul li.on {
+	background-position: 0px -21px;
+}
