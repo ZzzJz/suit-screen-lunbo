@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+html, body, div, p, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td{ margin:0; padding:0; text-decoration:none; list-style:none; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:border-box; box-sizing:border-box; }
+
+body{ font-family:"微软雅黑"; font-size:14px; color:#333; min-width:1050px; }
+a{ text-decoration:none; color:#333; outline:none; star:expression(this.onFocus=this.blur()); }
+a img{ border:0; }
+button{ font-family:"微软雅黑"; cursor:pointer; border:none; outline:none; }
+button:focus{ outline:none; }
+textarea{ resize:none; }
+input{-webkit-appearance: none; -moz-appearance: none; -o-appearance: none; appearance: none;}
+
+.fl{float:left;}
+.fr{float: right;}
+.clear:after { 
+     content:""; 
+     display:table; /*采用此方法可以有效避免浏览器兼容问题*/
+     clear:both;
+}
